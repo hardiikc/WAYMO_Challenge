@@ -1,6 +1,6 @@
-# 🚗 Trajectory Prediction with GRU & LSTM on the Waymo Open Dataset
+# Trajectory Prediction with GRU & LSTM on the Waymo Open Dataset
 
-## 📌 Overview
+## Overview
 This repository contains the implementation of **GRU (Gated Recurrent Units)** and **LSTM (Long Short-Term Memory)** models for **trajectory prediction** in autonomous driving, as part of the **Waymo Open Dataset Challenge 2024 – Sim Agents**.
 
 The project explores:
@@ -10,7 +10,7 @@ The project explores:
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 1. **Documentation**
    - `/docs` : Problem statement, methodology details, workflow diagrams, and evaluation results  
@@ -37,7 +37,7 @@ The project explores:
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 - Python 3.8+  
