@@ -42,7 +42,7 @@ The project explores:
 ### Prerequisites
 - Python 3.8+  
 - Install dependencies:
-```bash
+
 pip install -r requirements.txt
   
 ---
@@ -116,4 +116,6 @@ pip install -r requirements.txt
 - Integrate **Transformer-based motion forecasting models** (e.g., BERT4Motion, SceneDiffuser)  
 - Multi-agent coordination and interaction-aware prediction  
 - Real-time inference optimization for **autonomous vehicle deployment**  
-- Hybrid approaches combining **Reinforcement Learning + Seq2Seq prediction**  
+- Hybrid approaches combining **Reinforcement Learning + Seq2Seq prediction**
+
+```bash
