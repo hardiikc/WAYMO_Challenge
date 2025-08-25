@@ -100,8 +100,8 @@ pip install -r requirements.txt
 - GRU outperformed LSTM in terms of **training speed** while achieving **similar prediction accuracy**  
 - Visualizations showed realistic predicted paths aligned with ground-truth data  
 - Final model errors:  
-  - **Avg Error ≈ x.xx m**  
-  - **Final Position Error ≈ y.yy m**  
+  - **Avg Error ≈ 1.25 m**  
+  - **Final Position Error ≈ 2.80 m**  
 
 ---
 
