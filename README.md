@@ -44,101 +44,76 @@ The project explores:
 - Install dependencies:
 ```bash
 pip install -r requirements.txt
-Main Libraries
+  
+---
 
-PyTorch
+## 📚 Main Libraries
+- **PyTorch**  
+- **NumPy / Pandas**  
+- **Matplotlib / Seaborn**  
+- **TensorFlow** (for preprocessing)  
 
-NumPy / Pandas
+---
 
-Matplotlib / Seaborn
+## 🔄 Workflow
 
-TensorFlow (for preprocessing)
+### 1. Data Preprocessing
+- Converted **TFRecords → NPZ** for efficient training  
+- Normalized sequential data (positions, velocities, yaw)  
+- Generated training samples: **11 timesteps history → 80 timesteps prediction**  
 
-Workflow
-1. Data Preprocessing
+### 2. LSTM Model
+- Seq2Seq Encoder-Decoder with **2 hidden layers (128 neurons each)**  
+- **Dropout 0.3** to prevent overfitting  
+- Loss: **Mean Squared Error (MSE)**  
+- Optimizer: **Adam + learning rate scheduling**  
 
-Converted TFRecords → NPZ for efficient training
+### 3. GRU Model
+- Similar Seq2Seq setup with **GRU cells (2 layers, 64 neurons)**  
+- Simplified gating mechanism → faster convergence  
+- Loss: **MSE**, Optimizer: **Adam**  
 
-Normalized sequential data (positions, velocities, yaw)
+### 4. Training
+- Mini-batch training with autoregressive decoding  
+- Debugging assertions for tensor shape validation  
+- Adjusted batch size due to GPU memory constraints  
 
-Generated training samples: 11 timesteps history → 80 timesteps prediction
+### 5. Evaluation
+- Metrics: **MAE (Mean Absolute Error), RMSE (Root Mean Squared Error)**  
+- Visual comparison of predicted vs ground truth trajectories  
 
-2. LSTM Model
+---
 
-Seq2Seq Encoder-Decoder with 2 hidden layers (128 neurons each)
+## 📊 Results
 
-Dropout 0.3 to prevent overfitting
+### LSTM
+- Learned temporal dependencies effectively  
+- Produced smooth trajectory predictions  
+- Slower convergence  
 
-Loss: Mean Squared Error (MSE)
+### GRU
+- Faster training convergence  
+- Comparable accuracy with fewer parameters  
+- Computationally more efficient  
 
-Optimizer: Adam + learning rate scheduling
+### Key Findings
+- GRU outperformed LSTM in terms of **training speed** while achieving **similar prediction accuracy**  
+- Visualizations showed realistic predicted paths aligned with ground-truth data  
+- Final model errors:  
+  - **Avg Error ≈ x.xx m**  
+  - **Final Position Error ≈ y.yy m**  
 
-3. GRU Model
+---
 
-Similar Seq2Seq setup with GRU cells (2 layers, 64 neurons)
+## 🌟 Highlights
+- End-to-end pipeline: **TFRecords → Preprocessing → Seq2Seq → Evaluation**  
+- Modular design: swap easily between **GRU, LSTM, CNN, or Transformer models**  
+- Detailed **visualizations** for debugging and interpretability  
 
-Simplified gating mechanism → faster convergence
+---
 
-Loss: MSE, Optimizer: Adam
-
-4. Training
-
-Mini-batch training with autoregressive decoding
-
-Debugging assertions for tensor shape validation
-
-Adjusted batch size due to GPU memory constraints
-
-5. Evaluation
-
-Metrics: MAE (Mean Absolute Error), RMSE (Root Mean Squared Error)
-
-Visual comparison of predicted vs ground truth trajectories
-
-Results
-
-LSTM
-
-Learned temporal dependencies effectively
-
-Produced smooth trajectory predictions
-
-Slower convergence
-
-GRU
-
-Faster training convergence
-
-Comparable accuracy with fewer parameters
-
-Computationally more efficient
-
-Key Findings
-
-GRU outperformed LSTM in terms of training speed while achieving similar prediction accuracy
-
-Visualizations showed realistic predicted paths aligned with ground-truth data
-
-Final model errors:
-
-Avg Error ≈ x.xx m
-
-Final Position Error ≈ y.yy m
-
-Highlights
-
-End-to-end pipeline: TFRecords → Preprocessing → Seq2Seq → Evaluation
-
-Modular design: swap easily between GRU, LSTM, CNN, or Transformer models
-
-Detailed visualizations for debugging and interpretability
-
-Future Work
-
-Integrate Transformer-based motion forecasting models (e.g., BERT4Motion, SceneDiffuser)
-
-Multi-agent coordination and interaction-aware prediction
-
-Real-time inference optimization for autonomous vehicle deployment
-
-Hybrid approaches combining Reinforcement Learning + Seq2Seq prediction
+## 🔮 Future Work
+- Integrate **Transformer-based motion forecasting models** (e.g., BERT4Motion, SceneDiffuser)  
+- Multi-agent coordination and interaction-aware prediction  
+- Real-time inference optimization for **autonomous vehicle deployment**  
+- Hybrid approaches combining **Reinforcement Learning + Seq2Seq prediction**  
