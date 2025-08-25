@@ -55,7 +55,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🔄 Workflow
+##  Workflow
 
 ### 1. Data Preprocessing
 - Converted **TFRecords → NPZ** for efficient training  
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📊 Results
+##  Results
 
 ### LSTM
 - Learned temporal dependencies effectively  
@@ -105,14 +105,14 @@ pip install -r requirements.txt
 
 ---
 
-## 🌟 Highlights
+##  Highlights
 - End-to-end pipeline: **TFRecords → Preprocessing → Seq2Seq → Evaluation**  
 - Modular design: swap easily between **GRU, LSTM, CNN, or Transformer models**  
 - Detailed **visualizations** for debugging and interpretability  
 
 ---
 
-## 🔮 Future Work
+##  Future Work
 - Integrate **Transformer-based motion forecasting models** (e.g., BERT4Motion, SceneDiffuser)  
 - Multi-agent coordination and interaction-aware prediction  
 - Real-time inference optimization for **autonomous vehicle deployment**  
