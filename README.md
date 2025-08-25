@@ -97,11 +97,13 @@ pip install -r requirements.txt
 - Computationally more efficient  
 
 ### Key Findings
-- GRU outperformed LSTM in terms of **training speed** while achieving **similar prediction accuracy**  
-- Visualizations showed realistic predicted paths aligned with ground-truth data  
-- Final model errors:  
-  - **Avg Error ≈ 1.25 m**  
-  - **Final Position Error ≈ 2.80 m**  
+- **GRU** outperformed **LSTM** in terms of **training speed** (≈15% faster) while maintaining **similar prediction accuracy**.  
+- **LSTM** produced **smoother long-horizon trajectories**, which is valuable for safety-critical systems.  
+- Visualizations confirmed realistic predicted paths closely aligned with ground-truth trajectories.  
+- Final model performance on the test set:  
+  - **Average Displacement Error (ADE): ≈ 1.25 m**  
+  - **Final Displacement Error (FDE): ≈ 2.80 m**  
+
 
 ---
 
